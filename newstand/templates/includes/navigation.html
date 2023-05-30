@@ -1,0 +1,19 @@
+{% url 'bosses:home' as bosses_home_url %}
+{% url 'about_rup:home' as about_rup_home_url %}
+{% url 'ideology:home' as ideology_home_url %}
+{% url 'another_info:dop_info' as another_info_dop_info_url %}
+{% url 'main_page:home' as main_page %}
+<ul>
+    <li><a class="nav-link scrollto active" href="{% url 'main_page:home' %}">Главная</a></li>
+    <li><a class="nav-link scrollto" href="{% url 'bosses:home' %}">Руководство</a></li>
+    <li><a class="nav-link scrollto" href="{% url 'about_rup:home' %}">О предприятии</a></li>
+
+    <li><a class="nav-link scrollto" href="{% url 'ideology:home' %}">Идеология</a></li>
+    <li><a class="nav-link scrollto" href="{% url 'another_info:bank' %}">Реквизиты</a></li>
+{% comment %}     <li><a class="nav-link scrollto" href="{% url 'another_info:el_message' %}">Электронные обращения</a></li> {% endcomment %}
+    <li><a class="nav-link scrollto" href="{% url 'another_info:about_message' %}">О работе с обращениями</a></li>
+    <li><a class="nav-link scrollto" href="{% url 'another_info:dop_info' %}">Дополнительная информация</a></li>
+
+
+</ul>
+<i class="bi bi-list mobile-nav-toggle"></i>

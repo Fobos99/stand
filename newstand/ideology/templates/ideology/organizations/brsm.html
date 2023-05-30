@@ -1,0 +1,78 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main id="main">
+    <div id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'main_page:home' %}">Главная</a></li>
+                <li><a href="{% url 'ideology:home' %}">Идеология</a></li>
+                <li><a href="{% url 'ideology:organizations' %}">Общественные организации и объединения</a></li>
+            </ol>
+            <h2>ОО "Белоруский республиканский союз молодежи"</h2>
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="row">
+                {% for brsm in object_list %}
+                <div class="col-lg-12 col-md-12" data-aos="fade-up">
+                    <div class="wrapper" style="display: flex; flex-direction:row; margin: 20px;">
+                        <div class="col-lg-2 col-md-2" data-aos="fade-up">
+                            <img src="{{ brsm.image_brsm.url }}" alt=""
+                                style="width: 80px; height:80px; margin: 0 15px;">
+                        </div>
+                        <div class="col-lg-8 col-md-8" data-aos="fade-up">
+                            <h2 class="entry-title">{{brsm.title }}</h2>
+                        </div>
+                        <div class="col-lg-2 col-md-2" data-aos="fade-up">
+                            <img src="{{ brsm.image_brsm2.url }}" alt=""
+                                style="width: 80px; height:80px;  margin: 0 15px">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-12 col-12" data-aos="fade-up">
+                    <p>{{ brsm.descr_info | safe}}</p>
+                    <p>{{ brsm.descr_about | safe}}</p>
+                </div>
+                <div class="col-lg-6 col-md-12 col-12" data-aos="fade-up">
+                    <img src="{{  brsm.brsm_symbol.url }}" alt="" style="width: 100%;">
+                    <img src="{{ brsm.brsm_bilet.url }}" alt="" style="width: 100%;">
+                </div>
+                {% endfor %}
+
+                <div class="col-lg-12 col-md-12 col-12" data-aos="fade-up" style="margin-top:20px">
+                    <h2 class="entry-title">Контакты</h2>
+                    <h4 class="entry-title " style="margin-bottom: 30px;">Руководящий аппарат объединения</h4>
+
+
+                    {% for brsm_contacts in object_lists %}
+                    <div class="wrapper" style="margin: 15px 0; border-bottom:1px solid black;   padding:15px 0">
+                        <div class="row">
+                            <div class="col-lg-4 col-sm-4 col-4">
+                                <p>{{ brsm_contacts.title_org }}</p>
+                                <p>{{ brsm_contacts.title_adress }}</p>
+                                <p>e-mail:{{ brsm_contacts.title_email }}</p>
+                            </div>
+                            <div class="col-lg-4 col-sm-4 col-4">
+                                <p>{{ brsm_contacts.title_job }}</p>
+                                <p>{{ brsm_contacts.title_name }}</p>
+                            </div>
+                            <div class="col-lg-4 col-sm-4 col-4">
+                                <div class="entry-img img-big brsm-img">
+                                    <img src="{{ brsm_contacts.photo.url }}" alt="" class="img-fluid" >
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

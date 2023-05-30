@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<main id="main">
+      <div id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="{% url 'main_page:home' %}">Главная</a></li>
+        <li><a href="{% url 'ideology:home' %}">Идеология</a></li>
+      </ol>
+      <h2>Графики</h2>
+    </div>
+  </div><!-- End Breadcrumbs -->
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+        <div class="container">
+            <div class="row">
+
+                {% for grafik in object_list %}
+                <div class="col-lg-6 col-md-6" data-aos="fade-up">
+                    <a href="./{{grafik.id}}">
+                        <div class="ideology">
+                            <h4 class="title">{{ grafik.title }}</h4>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+</main>
+
+{% endblock content %}

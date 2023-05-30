@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main id="main">
+  <div id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="{% url 'main_page:home' %}">Главная</a></li>
+        <li><a href="{% url 'ideology:home' %}">Идеология</a></li>
+        <li><a href="{% url 'ideology:organizations' %}">Общественные организации и объединения</a></li>
+      </ol>
+      <h2> {{organizations.title}}</h2>
+    </div>
+  </div><!-- End Breadcrumbs -->
+  <!-- ======= Services Section ======= -->
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-12 entries">
+          <article class="entry entry-single">
+            <h2 class="entry-title">
+              {{organizations.title}}
+            </h2>
+            <div class="entry-img">
+              {% if organizations.image.url != None %}
+              <img src="{{ organizations.image.url }}" alt="" class="img-fluid">
+              {% endif %}
+            </div>
+            <div class="entry-content">
+              <p>
+                {{ organizations.description | safe }}
+              </p>
+            </div>
+          </article><!-- End blog entry -->
+        </div><!-- End blog entries list -->
+      </div>
+    </div>
+  </section><!-- End Blog Single Section -->
+</main>
+{% endblock content %}

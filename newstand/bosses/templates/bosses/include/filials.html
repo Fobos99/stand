@@ -1,0 +1,17 @@
+{% for filials in filials_list %}
+
+<div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+    <div class="member">
+        <div class="member-img">
+            <img src="{{ filials.photo.url }} " style="width:100%" class="img-fluid" alt="">
+
+        </div>
+        <div class="member-info">
+            <h4>{{ filials.title_name }}</h4>
+            <h4>{{ filials.title_job }}</h4>
+
+        </div>
+    </div>
+</div>
+
+{% endfor %}

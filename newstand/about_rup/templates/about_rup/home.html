@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% block content %}
+<main id="main" class="scrolled-offset">
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services" >
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-lg-12 col-md-12" style="margin-bottom:30px;">
+                    <div class="row">
+
+                        <div class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 " data-aos="fade-up">
+                            <div class="entry-img img-big map">
+                                {% for map in object_list3 %}
+                                <img src="{{ map.image_map.url }}" alt="" class="img-fluid img-big">
+                                {% endfor %}
+                            </div>
+                        </div>
+
+
+                        <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-xs-12 " data-aos="fade-up">
+                            {% for about_rup in object_list2 %}
+                            <h4 style="margin-bottom: 40px;">{{ about_rup.title}}</h4>
+                            <p>
+                                {{ about_rup.description | safe }}
+                            </p>
+                            {% endfor %}
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12 col-lg-12 col-md-12" style="margin-bottom:30px;">
+                    <div class="row">
+                        {% for functions in object_list %}
+                        <h4 style="margin-top: 20px;">{{ functions.title}}</h4>
+                        <p>{{ functions.description | safe }}</p>
+                        {% endfor %}
+                    </div>
+                </div>
+
+
+                <div class="col-12 col-lg-12 col-md-12" style="margin-bottom:30px;">
+                    <div class="row">
+                        <h2>Территория обслуживания</h2>
+                        {% for terretory in object_list4 %}
+                        <div class="col-lg-12 col-md-12 " style="margin: 20px 0; border-bottom: 1px solid black">
+                            <h4 style="margin-top: 20px;">{{terretory.title}}</h4>
+                            <ul>
+                                <li>территория обслуживания: {{ terretory.terretory | safe}}</li>
+                                <li>адрес: {{ terretory.adress}}</li>
+                                <li>тел./факс: {{ terretory.tel}}</li>
+                                <li>e-mail: {{ terretory.mail}}</li>
+
+                                {% if terretory.rs_bank %}
+                                <li>р/с: {{ terretory.rs_bank | safe}}</li>
+                                {% endif %}
+                            </ul>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

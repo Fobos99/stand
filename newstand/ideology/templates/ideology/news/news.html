@@ -1,0 +1,94 @@
+{% extends 'base.html' %}
+{% block content %}
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <div id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="{% url 'main_page:home' %}">Главная</a></li>
+        <li><a href="{% url 'ideology:home' %}">Идеология</a></li>
+      </ol>
+      <h2>Новости</h2>
+    </div>
+  </div><!-- End Breadcrumbs -->
+
+  <!-- ======= Blog Section ======= -->
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        <div class="col-lg-8 entries">
+
+          {% for news in object_list %}
+          <article class="entry">
+            <a href="{{news.id}}">
+              <div class="wrapper">
+                <div class="entry-img">
+                  {% if news.image.url != None %}
+                  <img src="{{ news.image.url }}" alt="" class="img-fluid">
+                  {% endif %}
+                </div>
+                <h2 class="entry-title">
+                  {{news.title}}
+                </h2>
+                <div class="entry-meta">
+                  <ul>
+                    <li class="d-flex align-items-center"><i class="bi bi-clock"></i> {{ news.date | date:"d-m-Y"}}</li>
+                  </ul>
+                </div>
+                <div class="entry-content">
+                  {{ news.preview_news |safe }}
+                  <div class="read-more">
+                    <div>Подробнее</div>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </article><!-- End blog entry -->
+          {% endfor %}
+
+
+          <div class="blog-pagination">
+            <ul class="justify-content-center">
+              {% for p in object_list.paginator.page_range %}
+              {% if object_list.number == p %}
+              <li class="active pag"><a href="?page={{ p }}">{{ p }}</a></li>
+              {% else %}
+              <li class="pag"><a href="?page={{ p }}">{{ p }}</a></li>
+              {% endif %}
+
+              {% endfor %}
+            </ul>
+          </div>
+
+
+        </div><!-- End blog entries list -->
+
+        <div class="col-lg-4">
+          <div class="sidebar">
+            <h3 class="sidebar-title">Последние новости</h3>
+            <div class="sidebar-item recent-posts">
+              {% for news in list_post|slice:":5" %}
+              <a href="{{news.id}}">
+                <div class="post-item clearfix">
+                  <img src="{{ news.image.url }}" alt="">
+                  <h4>{{news.title}}</h4>
+                  <time>{{ news.date | date:" d-m-Y"}}</time>
+                </div>
+              </a>
+              {% endfor %}
+
+            </div><!-- End sidebar recent posts-->
+
+
+          </div><!-- End sidebar -->
+
+        </div><!-- End blog sidebar -->
+
+      </div>
+
+    </div>
+  </section><!-- End Blog Section -->
+
+</main><!-- End #main -->
+{% endblock content %}

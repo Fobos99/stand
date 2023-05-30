@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block content %}
+<main id="main" class="scrolled-offset">
+    <section id="team" class="team section-bg" >
+        <div class="container">
+            <div class="section-title justify-content-start">
+                <h2 >Руководство</h2>
+                <p >РУП "Гродненское агентство по государственной регистрации и земельному кадастру"
+                </p>
+            </div>
+
+            <div class="row">
+                <div>
+                    <h2 style="margin:30px;"> Руководство гродненского агентства</h2>
+                </div>
+                {% include './include/director.html' %}
+                {% include './include/first_zam.html' %}
+                {% include './include/zam.html' %}
+                <div>
+                    <h2 style="margin:30px;"> Руководство филиалов</h2>
+                </div>
+                {% include './include/filials.html' %}
+            </div>
+
+        </div>
+    </section><!-- End Team Section -->
+</main>
+{% endblock content %}

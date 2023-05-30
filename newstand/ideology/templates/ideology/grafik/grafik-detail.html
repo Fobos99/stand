@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% block content %}
+
+
+<main id="main">
+    <div id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'main_page:home' %}">Главная</a></li>
+                <li><a href="{% url 'ideology:home' %}">Идеология</a></li>
+                <li><a href="{% url 'ideology:grafik' %}">Графики</a></li>
+            </ol>
+            <h2>Графики приемов граждан</h2>
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services ">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 " data-aos="fade-up">
+                    <h2>{{ grafik.title}}</h2>
+                    <div class="full-list" style="margin-top: 30px;">
+                        {{ grafik.post|safe}}
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

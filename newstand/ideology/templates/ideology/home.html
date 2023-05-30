@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main id="main">
+ 
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services" style="margin-top:130px">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <a href="{% url 'ideology:govment' %}">
+                        <div class="ideology">
+                            <h4 class="title">Государственная символика</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <a href="{% url 'ideology:organizations' %}">
+                        <div class="ideology">
+                            <h4 class="title">Общественные организации</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <a href="{% url 'ideology:edi' %}">
+                        <div class="ideology">
+                            <h4 class="title">Единый день информирования</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <a href="{% url 'ideology:deskbest' %}">
+                        <div class="ideology">
+                            <h4 class="title">Доска почёта</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <a href="{% url 'ideology:bestworker' %}">
+                        <div class="ideology">
+                            <h4 class="title">Лучший по профессии</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <a href="{% url 'ideology:grafik' %}">
+                        <div class="ideology">
+                            <h4 class="title">Графики приема</h4>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <a href="{% url 'ideology:news' %}">
+                        <div class="ideology">
+                            <h4 class="title">Новости</h4>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %}

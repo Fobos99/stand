@@ -1,0 +1,8 @@
+version: '3.0'
+
+services:
+  stand:
+    build: .
+    command: python manage.py runserver 0.0.0.0:8008
+    ports:
+      - 8008:8008

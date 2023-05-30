@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main id="main">
+  <div id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="{% url 'main_page:home' %}">Главная</a></li>
+        <li><a href="{% url 'ideology:home' %}">Идеология</a></li>
+      </ol>
+      <h2>Государственная символика</h2>
+    </div>
+  </div><!-- End Breadcrumbs -->
+  <!-- ======= Services Section ======= -->
+  <section id="services" class="services ">
+    <div class="container">
+      <div class="row">
+
+        {% for govment in object_list %}
+        <div class="col-12 col-lg-12 col-md-12" style="margin-bottom:50px;">
+          <div class="row">
+            <h2>{{govment.title}}</h2>
+            <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12 " data-aos="fade-up">
+              <div class="entry-img">
+                <img src="{{ govment.image.url }}" alt="" class="img-fluid">
+              </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-12 col-sm-12 col-xs-12 " data-aos="fade-up">
+              <p>
+                {{ govment.description | safe }}
+              </p>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+
+
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock content %}

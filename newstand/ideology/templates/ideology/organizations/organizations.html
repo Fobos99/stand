@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main id="main">
+  <div id="breadcrumbs" class="breadcrumbs">
+    <div class="container">
+      <ol>
+        <li><a href="{% url 'main_page:home' %}">Главная</a></li>
+        <li><a href="{% url 'ideology:home' %}">Идеология</a></li>
+      </ol>
+      <h2>Общественные организации и объединения</h2>
+    </div>
+  </div><!-- End Breadcrumbs -->
+  <!-- ======= Services Section ======= -->
+
+  <section id="blog" class="blog">
+    <div class="container" data-aos="fade-up">
+      <div class="row">
+        {% for organizations in object_list %}
+        <div class="col-lg-12 entries">
+          <article class="entry">
+            <a href="{{organizations.id}}">
+              <div class="wrapper">
+                <h2 class="entry-title">
+                  {{organizations.title}}
+                </h2>
+              </div>
+            </a>
+          </article><!-- End blog entry -->
+        </div>
+        {% endfor %}
+
+
+        <div class="col-lg-12 entries">
+          <article class="entry">
+            <a href="{% url 'ideology:brsm' %}">
+              <div class="wrapper">
+                <h2 class="entry-title">
+                  ОО "Белоруский республиканский союз молодежи"
+                </h2>
+              </div>
+            </a>
+          </article><!-- End blog entry -->
+        </div>
+      </div>
+  </section>
+</main>
+{% endblock content %}

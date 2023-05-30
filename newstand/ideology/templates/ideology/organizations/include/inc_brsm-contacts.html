@@ -1,0 +1,17 @@
+ <div class="row">
+    {% for brsm_contacts in object_list %}
+    <div class="col-lg-4">
+        <h5>{{ brsm_contacts.title_org }}1</h5>
+        <p>{{ brsm_contacts.title_adress }}2</p>
+        <p>{{ brsm_contacts.title_email }}3</p>
+    </div>
+    <div class="col-lg-4">
+        <p>{{ brsm_contacts.title_job }}4</p>
+        <p>{{ brsm_contacts.title_name }}5</p>
+    </div>
+    <div class="col-lg-4"><div class="entry-img">
+                <img src="{{ brsm_contacts.photo.url }}" alt="" class="img-fluid">
+              </div>6</div>
+
+    {% endfor %}
+</div>

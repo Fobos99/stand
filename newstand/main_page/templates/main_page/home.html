@@ -1,0 +1,57 @@
+{% extends 'base.html' %}
+{% block content %}
+<!-- ======= Hero Section ======= -->
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    <div class="container" data-aos="fade-in">
+        <h1>Информационный стенд</h1>
+        <h2>РУП "Гродненское агентство по госдарственной регистрации и земельному кадастру"</h2>
+
+    </div>
+</section><!-- End Hero -->
+
+<main id="main" class="scrolled-offset-2">
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services section-bg" >
+        <div class="container">
+
+
+            <div class="row">             
+                {% for services in object_list %}
+                <div class="col-lg-4 col-md-6" data-aos="fade-up">
+                    <div class="icon-box" data-bs-toggle="modal" data-bs-target="#{{services.key}}">
+                        <div class="icon"><img src="{{services.image.url}}" style="width: 60%;"></div>
+                        <h4 class="title">{{ services.title}}</h4>
+                        <div class="description">{{services.prewiev | safe}}</div>
+
+                    </div>
+                </div>
+
+
+                <div class="modal fade " id="{{services.key}}" tabindex="-1" aria-labelledby="exampleModalLabel"
+                    aria-hidden="true">
+                    <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">{{services.title}}</h5>
+                            </div>
+                            <div class="modal-body row">
+                                {{services.detail | safe}}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть
+                                </button>
+                                <!-- <button type="button" class="btn btn-primary">Сохранить изменения</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {%endfor%}
+
+
+            </div>
+
+        </div>
+    </section><!-- End Services Section -->
+</main><!-- End #main -->
+
+{% endblock content %}

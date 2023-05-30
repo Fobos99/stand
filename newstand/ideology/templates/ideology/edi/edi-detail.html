@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<main id="main" class="scrolled-offset">
+    <div id="breadcrumbs" class="breadcrumbs">
+        <div class="container">
+            <ol>
+                <li><a href="{% url 'main_page:home' %}">Главная</a></li>
+                <li><a href="{% url 'ideology:home' %}">Идеология</a></li>
+                <li><a href="{% url 'ideology:edi' %}">Единый день информирования</a></li>
+            </ol>
+            <h2>Единый день информирования</h2>
+        </div>
+    </div><!-- End Breadcrumbs -->
+    <!-- ======= Services Section ======= -->
+    <section id="blog" class="blog">
+        <div class="container" data-aos="fade-up">
+            <div class="row">
+                <div class="col-lg-12 entries">
+                    <article class="entry entry-single">
+                        <h2 class="entry-title">
+                            {{edi.title}}
+                        </h2>
+                        <div class="entry-meta">
+                            <ul>
+                                <li class="d-flex align-items-center"><i class="bi bi-clock"></i>
+                                    {{ edi.date | date:"d-m-Y"}}</li>
+                            </ul>
+                        </div>
+                        <div class="entry-content">
+                            <p>
+                                {{ edi.post |safe }}
+                            </p>
+                        </div>
+                    </article><!-- End blog entry -->
+                </div><!-- End blog entries list -->
+            </div>
+        </div>
+    </section><!-- End Blog Single Section -->
+</main>
+{% endblock content %}

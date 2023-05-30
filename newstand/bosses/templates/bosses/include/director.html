@@ -1,0 +1,16 @@
+{% for dir in object_list %}
+<div class="col-12 d-flex align-items-stretch justify-content-center">
+    <div class="member">
+        <div class="member-img">
+            <img src=" {{ dir.photo.url }} " style="width:100%" class="img-fluid" alt="">
+        </div>
+        <div class="member-info">
+            <h4>{{ dir.title_name }}</h4>
+            <span>
+                <h6>{{ dir.title_job }}</h6>
+            </span>
+
+        </div>
+    </div>
+</div>
+{% endfor %}
