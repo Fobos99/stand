@@ -9,6 +9,7 @@ body {
 a {
     color: #001137 !important;
     text-decoration: none !important;
+    width: auto;
 }
 
 
