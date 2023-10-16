@@ -3,6 +3,7 @@
 {% url 'ideology:home' as ideology_home_url %}
 {% url 'another_info:dop_info' as another_info_dop_info_url %}
 {% url 'main_page:home' as main_page %}
+{% url 'prezident_ukaz:home' as prezident_ukaz_url %}
 <ul>
     <li><a class="nav-link scrollto active" href="{% url 'main_page:home' %}">Главная</a></li>
     <li><a class="nav-link scrollto" href="{% url 'bosses:home' %}">Руководство</a></li>
@@ -13,6 +14,7 @@
 {% comment %}     <li><a class="nav-link scrollto" href="{% url 'another_info:el_message' %}">Электронные обращения</a></li> {% endcomment %}
     <li><a class="nav-link scrollto" href="{% url 'another_info:about_message' %}">О работе с обращениями</a></li>
     <li><a class="nav-link scrollto" href="{% url 'another_info:dop_info' %}">Дополнительная информация</a></li>
+    <li><a class="nav-link scrollto" href="{% url 'prezident_ukaz:home' %}">Указ президента РБ №200</a></li>
 
 
 </ul>
