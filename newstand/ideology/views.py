@@ -1,3 +1,4 @@
+
 from django.shortcuts import render
 from django.core.paginator import Paginator
 from ideology.models import Deskbest, Bestworker, Grafik, News, Edi, Govment, BRSM, BRSM_contacts, Organizations
