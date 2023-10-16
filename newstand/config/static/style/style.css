@@ -6,6 +6,10 @@ body {
 
 }
 
+::-webkit-scrollbar {
+    display: none;
+}
+
 a {
     color: #001137 !important;
     text-decoration: none !important;
@@ -50,18 +54,18 @@ th>p {
     position: fixed;
     visibility: hidden;
     opacity: 0;
-    right: 15px;
-    bottom: 15px;
+    right: 20px;
+    bottom: 100px;
     z-index: 996;
     background: #ff5821;
-    width: 60px;
-    height: 60px;
+    width: 70px;
+    height: 70px;
     border-radius: 4px;
     transition: all 0.4s;
 }
 
 .back-to-top i {
-    font-size: 40px;
+    font-size: 70px;
     color: #fff;
     line-height: 0;
 }
@@ -81,7 +85,7 @@ th>p {
 # Header
 --------------------------------------------------------------*/
 #header {
-    min-height: 70px;
+    min-height: 112px;
     transition: all 0.5s;
     z-index: 997;
     background: #fff;
@@ -552,6 +556,7 @@ section {
 
 .services .icon-box h4 {
     text-align: center;
+    min-height: 44px;
 }
 
 .ideology {
@@ -622,13 +627,13 @@ section {
 # Team
 --------------------------------------------------------------*/
 .team .member {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
     overflow: hidden;
     text-align: center;
     border-radius: 5px;
     background: #fff;
     box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
-    width: 350px;
+    width: 320px;
 }
 
 .team .member .member-img {

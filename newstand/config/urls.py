@@ -22,12 +22,13 @@ from . import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(('main_page.urls', 'main_page')) ),
-    path('main_page/',include(('main_page.urls', 'main_page'))),
-    path('bosses/',include(('bosses.urls', 'bosses'))),
-    path('about_rup/',include(('about_rup.urls', 'about_rup'))),
-    path('ideology/',include(('ideology.urls', 'ideology'))),
-    path('another_info/',include(('another_info.urls', 'another_info'))),
-  
-    
-    ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+    path('', include(('main_page.urls', 'main_page'))),
+    path('main_page/', include(('main_page.urls', 'main_page'))),
+    path('bosses/', include(('bosses.urls', 'bosses'))),
+    path('about_rup/', include(('about_rup.urls', 'about_rup'))),
+    path('ideology/', include(('ideology.urls', 'ideology'))),
+    path('another_info/', include(('another_info.urls', 'another_info'))),
+    path('prezident_ukaz/', include(('prezident_ukaz.urls', 'prezident_ukaz'))),
+
+
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

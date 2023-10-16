@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'about_rup',
     'ckeditor',
     'another_info',
+    'prezident_ukaz',
 
 ]
 
@@ -126,7 +127,7 @@ USE_TZ = True
 STATIC_URL = 'static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATICFILES_DIRS = [
-    'config/static/',
+    'config/static',
 ]
 
 # конфигурация медиа файлов

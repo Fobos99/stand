@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<main id="main" class="scrolled-offset">
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services" >
+        <div class="container">
+            <div class="row">
+                {% for prezident_ukaz in object_list %}
+                <div class="col-12 " data-aos="fade-up">
+                    <h2 style="margin-top: 30px;">{{ prezident_ukaz.title}}</h2>
+                    <div class="full-list" style="margin-top: 30px;">
+                        {{ prezident_ukaz.description|safe}}
+                    </div>
+
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+</main>
+{% endblock content %} 
